@@ -14,7 +14,7 @@ To learn more about the NC State virtual reading room, view our [blog](https://w
 
 ## Instructions
 1. Download the script.
-1. Go to line 15 and change the default SSH port number from 22 to a number higher than 1024.
+1. Go to lines 14 and 18 and change the default SSH port number from 22 to a number higher than 1024.
 1. Transfer the script to the server: `rsync -avhP vrr_config.sh [IP address]:/home/$(whoami)`
 1. Connect to the server: `ssh [IP address]`
 1. Run script: `sudo vrr_config.sh`
