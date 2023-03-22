@@ -27,14 +27,14 @@ usermod -a -G sshusers $(whoami) &
 sed -i 's/rdpdr=true/rdpdr=false/g' /etc/xrdp/xrdp.ini &
 systemctl restart xrdp &
 # Make a directory with researcher initials as its name
-mkdir ABC &&
-chgrp -R sshusers ABC &
-chmod -R 570 ABC &
+mkdir /home/VRR/ABC &&
+chgrp -R sshusers /home/VRR/ABC &
+chmod -R 570 /home/VRR/ABC &
 # Make the researcher account the directory owner
-chown -R researcherID ABC &
-cd ABC &
+chown -R researcherID /home/VRR/ABC &
+cd /home/VRR/ABC &
 mkdir EADID DuplicationRequests &&
-chmod -R 770 DuplicationRequests &&
+chmod -R 770 DuplicationRequests
 # Install xRDP and enable sound redirection
 cd ~/Downloads &&
 wget https://www.c-nergy.be/downloads/xRDP/xrdp-installer-1.4.6.zip &&
