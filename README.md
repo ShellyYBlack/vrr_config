@@ -18,6 +18,6 @@ To learn more about the NC State virtual reading room, view our [blog](https://w
 1. Go to line 37 and change researcherID to an existing user account.
 1. Transfer the script to the server: `rsync -avhP vrr_config.sh [IPADDRESS]:/home/$(whoami)`
 1. Connect to the server: `ssh [IPADDRESS]`
-1. Make the script executable: chmod u+x vrr_config_nc_state.sh
+1. Make the script executable: `sudo chmod u+x vrr_config.sh`
 1. Run script: `sudo ./vrr_config.sh`
 1. [Verify](/testing.md) that the security configurations were applied.
