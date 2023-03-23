@@ -10,7 +10,7 @@ mkdir /etc/skel/Desktop &&
 mkdir /etc/skel/Desktop/VirtualReadingRoom &&
 ln -s /home/VRR /etc/skel/Desktop/VirtualReadingRoom &&
 # Edit firewall rules to disable HTTPS traffic
-iptables -A OUTPUT -p tcp -m owner --uid-owner $(whoami) -j ACCEPT &&
+iptables -A OUTPUT -p tcp -m owner --uid-owner $(logname) -j ACCEPT &&
 iptables -A OUTPUT -p tcp --dport 443 -j DROP &&
 iptables -A OUTPUT -p tcp --dport 80  -j DROP &&
 # Create a firewall rule to change the SSH port number
@@ -18,13 +18,13 @@ iptables -I INPUT -p tcp --dport 22 -m conntrack --ctstate NEW,ESTABLISHED -j AC
 # Make the firewall rules persist after rebooting
 /sbin/iptables-save &&
 # Prevent others from connecting to server via SSH
-echo -e "AllowUsers $(whoami)\nPort 22\nAllowTcpForwarding no" | tee -a /etc/ssh/ssh_config &&
+echo -e "AllowUsers $(logname)\nPort 22\nAllowTcpForwarding no" | tee -a /etc/ssh/ssh_config &&
 systemctl restart ext_sshd &&
 # Prevent others from connecting from server via SSH
 chmod o= /usr/bin/ssh &&
 groupadd sshusers &&
 chgrp sshusers /usr/bin/ssh &&
-usermod -a -G sshusers $(whoami) &&
+usermod -a -G sshusers $(logname) &&
 # Disable researchers from accessing local drives from VRR
 # If copying and pasting should be disabled, also set cliprdr to false
 sed -i 's/rdpdr=true/rdpdr=false/g' /etc/xrdp/xrdp.ini &&
@@ -39,9 +39,10 @@ cd /home/VRR/ABC &&
 mkdir EADID DuplicationRequests &&
 chmod -R 770 DuplicationRequests &&
 # Install xRDP and enable sound redirection
-cd ~/Downloads &&
+cd /tmp &&
 wget https://www.c-nergy.be/downloads/xRDP/xrdp-installer-1.4.6.zip &&
 unzip xrdp-installer-1.4.6.zip &&
-chmod +x  ~/Downloads/xrdp-installer-1.4.6.sh &&
+chmod +x /tmp/xrdp-installer-1.4.6.sh &&
+su - $(logname)
 ./xrdp-installer-1.4.6.sh -s &&
 reboot
