@@ -39,10 +39,9 @@ cd /home/VRR/ABC &&
 mkdir EADID DuplicationRequests &&
 chmod -R 770 DuplicationRequests &&
 # Install xRDP and enable sound redirection
-cd /tmp &&
 su - $(logname) &&
+cd ~/Downloads
 wget https://www.c-nergy.be/downloads/xRDP/xrdp-installer-1.4.6.zip &&
 unzip xrdp-installer-1.4.6.zip &&
-chmod +x /tmp/xrdp-installer-1.4.6.sh &&
-./xrdp-installer-1.4.6.sh -s &&
-sudo reboot
+chmod +x ~/Downloads/xrdp-installer-1.4.6.sh &&
+./xrdp-installer-1.4.6.sh -s
