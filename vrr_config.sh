@@ -40,7 +40,7 @@ mkdir EADID DuplicationRequests &&
 chmod -R 770 DuplicationRequests &&
 # Install xRDP and enable sound redirection
 su - $(logname) &&
-cd ~/Downloads
+cd ~/Downloads &&
 wget https://www.c-nergy.be/downloads/xRDP/xrdp-installer-1.4.6.zip &&
 unzip xrdp-installer-1.4.6.zip &&
 chmod +x ~/Downloads/xrdp-installer-1.4.6.sh &&
