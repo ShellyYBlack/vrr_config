@@ -9,8 +9,8 @@ NC State University Libraries has used the script on servers hosted by the [Virt
 To learn more about the NC State virtual reading room, view our [blog](https://www.lib.ncsu.edu/news/special-collections/introducing-virtual-reading-room) or [researcher user guide](https://ncsu-libraries.github.io/vrr/user-guide/).
 
 ## Prerequisites
-- A virtual server must be set up through a cloud computing service, e.g. Amazon EC2 or Google Cloud, first.
-- A desktop environment, such as Mate, needs to be installed before running the script.
+- A virtual Linux server must be set up through a cloud computing service, e.g. Amazon EC2 or Google Cloud, first.
+- A desktop environment, such as [Mate](https://mate-desktop.org) or [XFCE](https://www.xfce.org), needs to be installed before running the script.
 
 ## Instructions
 1. Download the script.
