@@ -20,4 +20,5 @@ To learn more about the NC State virtual reading room, view our [blog](https://w
 1. Connect to the server: `ssh [IPADDRESS]`
 1. Make the script executable: `chmod u+x vrr_config.sh`
 1. Run script: `sudo ./vrr_config.sh`
+1. Reboot.
 1. [Verify](/testing.md) that the security configurations were applied.
