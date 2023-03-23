@@ -2,7 +2,7 @@
 apt update &&
 apt upgrade -y &&
 # Install software
-apt-get install vlc darktable &&
+apt-get install -y vlc darktable &&
 # Create a central location to store materials
 mkdir /home/VRR &&
 # Make a symlink to that will automatically appear on user’s desktop when they log in
